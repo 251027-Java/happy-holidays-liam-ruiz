@@ -14,7 +14,7 @@ public class HolidayArt {
 
     public static void main(String[] args) {
         // TODO: Parse command-line argument for tree height (default: 5)
-        int height = 5;
+        int height = Integer.parseInt(args[0]);
 
         // TODO: Print the tree
         printTree(height);
@@ -34,7 +34,12 @@ public class HolidayArt {
         // - Calculate spaces needed for centering
         // - Calculate stars needed (1, 3, 5, 7, ...)
         // 3. Print the trunk (centered)
+        for (int i = 0; i < height; i++) {
+            int spaces = height - i - 1;
+            int stars = 2 * i + 1;
+            System.out.println(" ".repeat(spaces) + "*".repeat(stars) + " ".repeat(spaces));
+        }
+        System.out.println(" ".repeat(height - 2) + "|||");
 
-        System.out.println("Implement me!");
     }
 }
